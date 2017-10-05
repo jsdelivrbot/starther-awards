@@ -6,7 +6,8 @@ Demo project for the starther workshop
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
 
 ```
-$ npm run build
+$ yarn install
+$ yarn build
 $ heroku local
 ```
 
