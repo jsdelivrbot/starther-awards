@@ -1,0 +1,26 @@
+div.photo-feed {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 80px;
+    left: 0;
+    background-color: #fafafa;
+    overflow-y: scroll;
+    padding: 0 30%;
+}
+
+div.photo-feed ul.cards {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    flex-direction: column;
+}
+
+div.photo-feed ul.cards li.card {
+    max-width: 500px;
+    min-height: 400px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #ededed;
+    margin-bottom: 20px;
+}

@@ -4,16 +4,20 @@
     "description": "Workshop demo for the starther awards event",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js",
+        "start:front": "webpack-dev-server",
+        "start:server": "node index.js",
         "test": "node test.js",
         "build": "webpack"
     },
     "dependencies": {
         "babel-loader": "7.1.2",
+        "css-loader": "0.28.7",
         "ejs": "2.5.6",
         "express": "4.15.2",
+        "html-webpack-plugin": "2.30.1",
         "react": "16.0.0",
-        "react-dom": "16.0.0"
+        "react-dom": "16.0.0",
+        "style-loader": "0.19.0"
     },
     "devDependencies": {
         "babel-preset-es2015": "6.24.1",
