@@ -1,10 +1,7 @@
 {
-    "name": "node-js-getting-started",
-    "version": "0.2.6",
-    "description": "A sample Node.js app using Express 4",
-    "engines": {
-        "node": "6.11.1"
-    },
+    "name": "starther-awards",
+    "version": "0.0.1",
+    "description": "Workshop demo for the starther awards event",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
@@ -23,14 +20,12 @@
         "babel-preset-react": "6.24.1",
         "babel-register": "6.26.0",
         "jsxobj": "1.1.0",
-        "request": "^2.81.0",
-        "tape": "^4.7.0",
         "webpack": "3.6.0",
         "webpack-dev-server": "2.9.1"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/heroku/node-js-getting-started"
+        "url": "https://github.com/DataDog/starther-awards.git"
     },
     "keywords": [
         "node",
