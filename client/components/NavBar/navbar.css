@@ -4,34 +4,14 @@
     left: 0;
     right: 0;
     min-height: 80px;
-    height: 80px;
+    height: 100px;
     background-color: #ffffff;
     padding: 0 15%;
     display: flex;
+    z-index: 100;
     align-items: center;
     justify-content: space-between;
-}
-
-.navbar-container .logo {
-    height: 70px;
-    max-width: 200px;
-}
-
-.navbar-container .logo img {
-    width: 100%;
-}
-
-.navbar-container nav.top-nav {
-    width: 80%;
-}
-
-.navbar-container nav.top-nav ul {
-    display: flex;
-    width: 100%;
-    list-style: none;
-    justify-content: flex-end;
-}
-
-.navbar-container nav.top-nav li {
-    margin-left: 10px;
+    background-image: url(http://localhost:8080/logo.png);
+    background-size: 45% 100%;
+    box-shadow: 0 3px 10px rgba(57, 63, 72, 0.6);
 }

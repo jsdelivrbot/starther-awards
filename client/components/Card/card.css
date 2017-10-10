@@ -1,12 +1,25 @@
 li.card {
     max-width: 600px;
     min-width: 600px;
-    min-height: 700px;
+    height:auto;
     margin: 0 auto;
     background: #ffffff;
     border: 1px solid #ededed;
     margin-bottom: 20px;
     position: relative;
+    overflow: hidden;
+}
+
+li.card .image-container {
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    background-color: #262626;
+    display:flex;
+    align-items: center;
+}
+li.card img {
+    width: 100%;
+    height: auto;
 }
 
 span.loader {
