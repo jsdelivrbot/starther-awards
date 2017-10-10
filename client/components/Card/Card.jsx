@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
+import CardHeader from '../CardHeader';
 import './card.css';
 
 class Card extends Component {
-    constructor() {
-        super();
-        this.state = {
-            loading: true
-        };
-    }
     render() {
-        const { imgSrc } = this.props;
+        const { imgSrc, title } = this.props;
         return (
             <li className="card">
-                {this.state.loading && (
-                    <span className="loader">Loading...</span>
-                )}
-                <img
-                    src={imgSrc}
-                    onLoad={() => this.setState({ loading: false })}
-                    alt=""
-                />
+                <CardHeader title={title} />
+                <img src={imgSrc} alt={title} />
                 <span>
                     <i className="fa fa-bandcamp" />
                 </span>
