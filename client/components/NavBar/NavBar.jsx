@@ -3,7 +3,9 @@ import './navbar.css';
 
 const NavBar = () => (
     <div className="navbar-container">
-        <span className="logo">LOGO!</span>
+        <span className="logo">
+            <img src="logo.png" alt="" />
+        </span>
         <nav className="top-nav">
             <ul>
                 <li>
