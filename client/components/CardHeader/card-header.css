@@ -1,0 +1,34 @@
+.card-header{
+    width: 100%;
+    padding: 5px 10px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    color: #262626;
+}
+
+.card-header .avatar {
+    width: 27px;
+    height: 27px;
+    border-radius: 100px;
+    border: 1px solid #dedede;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.card-header .avatar img {
+    width: 112%;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+
+.card-header .card-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+}
+
+.card-header .card-info .username{
+    font-weight: bold;
+    font-size: 1.1em;
+}
