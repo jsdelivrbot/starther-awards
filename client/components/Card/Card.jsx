@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardHeader from '../CardHeader';
+import CardFooter from '../CardFooter';
 import './card.css';
 
 class Card extends Component {
@@ -8,10 +9,14 @@ class Card extends Component {
         return (
             <li className="card">
                 <CardHeader title={title} />
-                <img src={imgSrc} alt={title} />
+                <div className="image-container">
+                    <img src={imgSrc} alt={title} />
+                </div>
+
                 <span>
                     <i className="fa fa-bandcamp" />
                 </span>
+                <CardFooter />
             </li>
         );
     }
