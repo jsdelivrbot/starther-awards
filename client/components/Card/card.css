@@ -1,0 +1,16 @@
+li.card {
+    max-width: 600px;
+    min-width: 600px;
+    min-height: 400px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #ededed;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+span.loader {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
