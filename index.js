@@ -1,18 +1,47 @@
-var express = require('express');
-var app = express();
+const chalk = require('chalk');
+const bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const Sequelize = require('sequelize');
+const { likeDefinition } = require('./db-models');
 
-app.set('port', (process.env.PORT || 5000));
+const sequelize = new Sequelize(process.env.DATABASE_URL);
+const Like = sequelize.define('like', likeDefinition);
+Like.sync();
+
+app.set('port', process.env.PORT || 5000);
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.render('pages/index');
+    response.render('pages/index');
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+app.get('/likes', (req, res) => {
+    Like.findAll().then(likes => res.send(likes));
 });
+
+app.post('/likes', (req, res) => {});
+
+app.delete('/likes', (req, res) => {});
+
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log(
+            chalk.green('DB Connection has been established successfully.')
+        );
+        app.listen(app.get('port'), function() {
+            console.log(
+                chalk.cyan('Node app is running on port', app.get('port'))
+            );
+        });
+    })
+    .catch(err => {
+        console.error(chalk.red('Unable to connect to the database:', err));
+    });
