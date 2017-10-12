@@ -70,5 +70,5 @@ typings/
 .env
 
 # Babel javascript output
-public/client.js
+# public/client.js
 
