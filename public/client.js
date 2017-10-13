@@ -21752,7 +21752,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, ".navbar-container {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    min-height: 80px;\n    height: 100px;\n    background-color: #ffffff;\n    padding: 0 15%;\n    display: flex;\n    z-index: 100;\n    align-items: center;\n    justify-content: space-between;\n    background-image: url(http://localhost:8080/logo.png);\n    background-size: 45% 100%;\n    box-shadow: 0 3px 10px rgba(57, 63, 72, 0.6);\n}", ""]);
+exports.push([module.i, ".navbar-container {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    height: 200px;\n    background-color: #ffffff;\n    padding: 0 15%;\n    display: flex;\n    z-index: 100;\n    align-items: center;\n    justify-content: space-between;\n    background-image: url(http://localhost:8080/logo.png);\n    background-size: cover;\n    box-shadow: 0 3px 10px rgba(57, 63, 72, 0.6);\n}", ""]);
 
 // exports
 
@@ -21893,7 +21893,7 @@ var _Card = __webpack_require__(42);
 
 var _Card2 = _interopRequireDefault(_Card);
 
-__webpack_require__(54);
+__webpack_require__(56);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21906,21 +21906,31 @@ var PhotoFeed = function PhotoFeed() {
             { className: 'cards' },
             _react2.default.createElement(_Card2.default, {
                 imgSrc: 'https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1536.jpg',
-                title: 'Station F'
+                title: 'Station F',
+                id: '0'
             }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1528.jpg' }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1497.jpg' }),
+            _react2.default.createElement(_Card2.default, {
+                imgSrc: 'https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1528.jpg',
+                id: '1'
+            }),
+            _react2.default.createElement(_Card2.default, {
+                imgSrc: 'https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1497.jpg',
+                id: '2'
+            }),
             _react2.default.createElement(_Card2.default, {
                 imgSrc: 'http://dreamatico.com/data_images/kitten/kitten-3.jpg',
-                title: 'Kitty kitty kitty'
+                title: 'Kitty kitty kitty',
+                id: '3'
             }),
             _react2.default.createElement(_Card2.default, {
                 imgSrc: 'http://farm1.static.flickr.com/9/12089146_078fce9dcf_o.jpg',
-                title: 'No comment'
+                title: 'No comment',
+                id: '4'
             }),
             _react2.default.createElement(_Card2.default, {
                 imgSrc: 'https://unsplash.it/600/600?image=1060',
-                title: 'Coffee shop'
+                title: 'Coffee shop',
+                id: '5'
             }),
             _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1070' }),
             _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1071' }),
@@ -21981,11 +21991,11 @@ var _CardHeader = __webpack_require__(44);
 
 var _CardHeader2 = _interopRequireDefault(_CardHeader);
 
-var _CardFooter = __webpack_require__(48);
+var _Heart = __webpack_require__(48);
 
-var _CardFooter2 = _interopRequireDefault(_CardFooter);
+var _Heart2 = _interopRequireDefault(_Heart);
 
-__webpack_require__(52);
+__webpack_require__(54);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22025,7 +22035,11 @@ var Card = function (_Component) {
                     null,
                     _react2.default.createElement('i', { className: 'fa fa-bandcamp' })
                 ),
-                _react2.default.createElement(_CardFooter2.default, null)
+                _react2.default.createElement(
+                    'div',
+                    { className: 'card__footer' },
+                    _react2.default.createElement(_Heart2.default, null)
+                )
             );
         }
     }]);
@@ -22161,12 +22175,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _CardFooter = __webpack_require__(49);
+var _Heart = __webpack_require__(49);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
   get: function get() {
-    return _interopRequireDefault(_CardFooter).default;
+    return _interopRequireDefault(_Heart).default;
   }
 });
 
@@ -22180,65 +22194,510 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(50);
+var _universalFetch = __webpack_require__(50);
+
+var _universalFetch2 = _interopRequireDefault(_universalFetch);
+
+__webpack_require__(52);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CardFooter = function CardFooter() {
-  return _react2.default.createElement('div', { className: 'card-footer' });
-};
-exports.default = CardFooter;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Heart = function (_Component) {
+    _inherits(Heart, _Component);
+
+    function Heart(props) {
+        _classCallCheck(this, Heart);
+
+        var _this = _possibleConstructorReturn(this, (Heart.__proto__ || Object.getPrototypeOf(Heart)).call(this, props));
+
+        _this.state = {
+            liked: false
+        };
+        _this.toggleLike = _this.toggleLike.bind(_this);
+        return _this;
+    }
+
+    _createClass(Heart, [{
+        key: 'toggleLike',
+        value: function toggleLike() {
+            var _this2 = this;
+
+            console.log(this.props.id);
+            (0, _universalFetch2.default)('//offline-news-api.herokuapp.com/stories').then(function (response) {
+                if (response.status >= 400) {
+                    throw new Error('Bad response from server');
+                }
+                return response.json();
+            }).then(function (stories) {
+                _this2.setState({
+                    liked: !_this2.state.liked
+                });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement('div', {
+                className: 'heart ' + (this.state.liked ? 'heart--liked' : null),
+                onClick: this.toggleLike
+            });
+        }
+    }]);
+
+    return Heart;
+}(_react.Component);
+
+exports.default = Heart;
 
 /***/ }),
 /* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+// the fetch-polyfill polyfill installs the fetch() function with IE8 Support
+// on the global object (window or self)
+//
+// Return that as the export for use in Webpack, Browserify etc.
+__webpack_require__(51);
+module.exports = self.fetch.bind(self);
 
-// load the styles
-var content = __webpack_require__(51);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(6)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./card-footer.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./card-footer.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
 
 /***/ }),
 /* 51 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(5)(undefined);
-// imports
+(function(self) {
+  'use strict';
+
+  // if __disableNativeFetch is set to true, the it will always polyfill fetch
+  // with Ajax.
+  if (!self.__disableNativeFetch && self.fetch) {
+    return
+  }
+
+  function normalizeName(name) {
+    if (typeof name !== 'string') {
+      name = String(name)
+    }
+    if (/[^a-z0-9\-#$%&'*+.\^_`|~]/i.test(name)) {
+      throw new TypeError('Invalid character in header field name')
+    }
+    return name.toLowerCase()
+  }
+
+  function normalizeValue(value) {
+    if (typeof value !== 'string') {
+      value = String(value)
+    }
+    return value
+  }
+
+  function Headers(headers) {
+    this.map = {}
+
+    if (headers instanceof Headers) {
+      headers.forEach(function(value, name) {
+        this.append(name, value)
+      }, this)
+
+    } else if (headers) {
+      Object.getOwnPropertyNames(headers).forEach(function(name) {
+        this.append(name, headers[name])
+      }, this)
+    }
+  }
+
+  Headers.prototype.append = function(name, value) {
+    name = normalizeName(name)
+    value = normalizeValue(value)
+    var list = this.map[name]
+    if (!list) {
+      list = []
+      this.map[name] = list
+    }
+    list.push(value)
+  }
+
+  Headers.prototype['delete'] = function(name) {
+    delete this.map[normalizeName(name)]
+  }
+
+  Headers.prototype.get = function(name) {
+    var values = this.map[normalizeName(name)]
+    return values ? values[0] : null
+  }
+
+  Headers.prototype.getAll = function(name) {
+    return this.map[normalizeName(name)] || []
+  }
+
+  Headers.prototype.has = function(name) {
+    return this.map.hasOwnProperty(normalizeName(name))
+  }
+
+  Headers.prototype.set = function(name, value) {
+    this.map[normalizeName(name)] = [normalizeValue(value)]
+  }
+
+  Headers.prototype.forEach = function(callback, thisArg) {
+    Object.getOwnPropertyNames(this.map).forEach(function(name) {
+      this.map[name].forEach(function(value) {
+        callback.call(thisArg, value, name, this)
+      }, this)
+    }, this)
+  }
+
+  function consumed(body) {
+    if (body.bodyUsed) {
+      return Promise.reject(new TypeError('Already read'))
+    }
+    body.bodyUsed = true
+  }
+
+  function fileReaderReady(reader) {
+    return new Promise(function(resolve, reject) {
+      reader.onload = function() {
+        resolve(reader.result)
+      }
+      reader.onerror = function() {
+        reject(reader.error)
+      }
+    })
+  }
+
+  function readBlobAsArrayBuffer(blob) {
+    var reader = new FileReader()
+    reader.readAsArrayBuffer(blob)
+    return fileReaderReady(reader)
+  }
+
+  function readBlobAsText(blob, options) {
+    var reader = new FileReader()
+    var contentType = options.headers.map['content-type'] ? options.headers.map['content-type'].toString() : ''
+    var regex = /charset\=[0-9a-zA-Z\-\_]*;?/
+    var _charset = blob.type.match(regex) || contentType.match(regex)
+    var args = [blob]
+
+    if(_charset) {
+      args.push(_charset[0].replace(/^charset\=/, '').replace(/;$/, ''))
+    }
+
+    reader.readAsText.apply(reader, args)
+    return fileReaderReady(reader)
+  }
+
+  var support = {
+    blob: 'FileReader' in self && 'Blob' in self && (function() {
+      try {
+        new Blob();
+        return true
+      } catch(e) {
+        return false
+      }
+    })(),
+    formData: 'FormData' in self,
+    arrayBuffer: 'ArrayBuffer' in self
+  }
+
+  function Body() {
+    this.bodyUsed = false
 
 
-// module
-exports.push([module.i, ".card-footer {\n    min-height:50px;\n}", ""]);
+    this._initBody = function(body, options) {
+      this._bodyInit = body
+      if (typeof body === 'string') {
+        this._bodyText = body
+      } else if (support.blob && Blob.prototype.isPrototypeOf(body)) {
+        this._bodyBlob = body
+        this._options = options
+      } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
+        this._bodyFormData = body
+      } else if (!body) {
+        this._bodyText = ''
+      } else if (support.arrayBuffer && ArrayBuffer.prototype.isPrototypeOf(body)) {
+        // Only support ArrayBuffers for POST method.
+        // Receiving ArrayBuffers happens via Blobs, instead.
+      } else {
+        throw new Error('unsupported BodyInit type')
+      }
+    }
 
-// exports
+    if (support.blob) {
+      this.blob = function() {
+        var rejected = consumed(this)
+        if (rejected) {
+          return rejected
+        }
+
+        if (this._bodyBlob) {
+          return Promise.resolve(this._bodyBlob)
+        } else if (this._bodyFormData) {
+          throw new Error('could not read FormData body as blob')
+        } else {
+          return Promise.resolve(new Blob([this._bodyText]))
+        }
+      }
+
+      this.arrayBuffer = function() {
+        return this.blob().then(readBlobAsArrayBuffer)
+      }
+
+      this.text = function() {
+        var rejected = consumed(this)
+        if (rejected) {
+          return rejected
+        }
+
+        if (this._bodyBlob) {
+          return readBlobAsText(this._bodyBlob, this._options)
+        } else if (this._bodyFormData) {
+          throw new Error('could not read FormData body as text')
+        } else {
+          return Promise.resolve(this._bodyText)
+        }
+      }
+    } else {
+      this.text = function() {
+        var rejected = consumed(this)
+        return rejected ? rejected : Promise.resolve(this._bodyText)
+      }
+    }
+
+    if (support.formData) {
+      this.formData = function() {
+        return this.text().then(decode)
+      }
+    }
+
+    this.json = function() {
+      return this.text().then(JSON.parse)
+    }
+
+    return this
+  }
+
+  // HTTP methods whose capitalization should be normalized
+  var methods = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT']
+
+  function normalizeMethod(method) {
+    var upcased = method.toUpperCase()
+    return (methods.indexOf(upcased) > -1) ? upcased : method
+  }
+
+  function Request(input, options) {
+    options = options || {}
+    var body = options.body
+    if (Request.prototype.isPrototypeOf(input)) {
+      if (input.bodyUsed) {
+        throw new TypeError('Already read')
+      }
+      this.url = input.url
+      this.credentials = input.credentials
+      if (!options.headers) {
+        this.headers = new Headers(input.headers)
+      }
+      this.method = input.method
+      this.mode = input.mode
+      if (!body) {
+        body = input._bodyInit
+        input.bodyUsed = true
+      }
+    } else {
+      this.url = input
+    }
+
+    this.credentials = options.credentials || this.credentials || 'omit'
+    if (options.headers || !this.headers) {
+      this.headers = new Headers(options.headers)
+    }
+    this.method = normalizeMethod(options.method || this.method || 'GET')
+    this.mode = options.mode || this.mode || null
+    this.referrer = null
+
+    if ((this.method === 'GET' || this.method === 'HEAD') && body) {
+      throw new TypeError('Body not allowed for GET or HEAD requests')
+    }
+    this._initBody(body, options)
+  }
+
+  Request.prototype.clone = function() {
+    return new Request(this)
+  }
+
+  function decode(body) {
+    var form = new FormData()
+    body.trim().split('&').forEach(function(bytes) {
+      if (bytes) {
+        var split = bytes.split('=')
+        var name = split.shift().replace(/\+/g, ' ')
+        var value = split.join('=').replace(/\+/g, ' ')
+        form.append(decodeURIComponent(name), decodeURIComponent(value))
+      }
+    })
+    return form
+  }
+
+  function headers(xhr) {
+    var head = new Headers()
+    var pairs = xhr.getAllResponseHeaders().trim().split('\n')
+    pairs.forEach(function(header) {
+      var split = header.trim().split(':')
+      var key = split.shift().trim()
+      var value = split.join(':').trim()
+      head.append(key, value)
+    })
+    return head
+  }
+
+  Body.call(Request.prototype)
+
+  function Response(bodyInit, options) {
+    if (!options) {
+      options = {}
+    }
+
+    this._initBody(bodyInit, options)
+    this.type = 'default'
+    this.status = options.status
+    this.ok = this.status >= 200 && this.status < 300
+    this.statusText = options.statusText
+    this.headers = options.headers instanceof Headers ? options.headers : new Headers(options.headers)
+    this.url = options.url || ''
+  }
+
+  Body.call(Response.prototype)
+
+  Response.prototype.clone = function() {
+    return new Response(this._bodyInit, {
+      status: this.status,
+      statusText: this.statusText,
+      headers: new Headers(this.headers),
+      url: this.url
+    })
+  }
+
+  Response.error = function() {
+    var response = new Response(null, {status: 0, statusText: ''})
+    response.type = 'error'
+    return response
+  }
+
+  var redirectStatuses = [301, 302, 303, 307, 308]
+
+  Response.redirect = function(url, status) {
+    if (redirectStatuses.indexOf(status) === -1) {
+      throw new RangeError('Invalid status code')
+    }
+
+    return new Response(null, {status: status, headers: {location: url}})
+  }
+
+  self.Headers = Headers;
+  self.Request = Request;
+  self.Response = Response;
+
+  self.fetch = function(input, init) {
+    return new Promise(function(resolve, reject) {
+      var request
+      if (Request.prototype.isPrototypeOf(input) && !init) {
+        request = input
+      } else {
+        request = new Request(input, init)
+      }
+
+      var xhr = new XMLHttpRequest()
+
+      function responseURL() {
+        if ('responseURL' in xhr) {
+          return xhr.responseURL
+        }
+
+        // Avoid security warnings on getResponseHeader when not allowed by CORS
+        if (/^X-Request-URL:/m.test(xhr.getAllResponseHeaders())) {
+          return xhr.getResponseHeader('X-Request-URL')
+        }
+
+        return;
+      }
+
+      var __onLoadHandled = false;
+
+      function onload() {
+        if (xhr.readyState !== 4) {
+          return
+        }
+        var status = (xhr.status === 1223) ? 204 : xhr.status
+        if (status < 100 || status > 599) {
+          if (__onLoadHandled) { return; } else { __onLoadHandled = true; }
+          reject(new TypeError('Network request failed'))
+          return
+        }
+        var options = {
+          status: status,
+          statusText: xhr.statusText,
+          headers: headers(xhr),
+          url: responseURL()
+        }
+        var body = 'response' in xhr ? xhr.response : xhr.responseText;
+
+        if (__onLoadHandled) { return; } else { __onLoadHandled = true; }
+        resolve(new Response(body, options))
+      }
+      xhr.onreadystatechange = onload;
+      xhr.onload = onload;
+      xhr.onerror = function() {
+        if (__onLoadHandled) { return; } else { __onLoadHandled = true; }
+        reject(new TypeError('Network request failed'))
+      }
+
+      xhr.open(request.method, request.url, true)
+
+      // `withCredentials` should be setted after calling `.open` in IE10
+      // http://stackoverflow.com/a/19667959/1219343
+      try {
+        if (request.credentials === 'include') {
+          if ('withCredentials' in xhr) {
+            xhr.withCredentials = true;
+          } else {
+            console && console.warn && console.warn('withCredentials is not supported, you can ignore this warning');
+          }
+        }
+      } catch (e) {
+        console && console.warn && console.warn('set withCredentials error:' + e);
+      }
+
+      if ('responseType' in xhr && support.blob) {
+        xhr.responseType = 'blob'
+      }
+
+      request.headers.forEach(function(value, name) {
+        xhr.setRequestHeader(name, value)
+      })
+
+      xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit)
+    })
+  }
+  self.fetch.polyfill = true
+
+  // Support CommonJS
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = self.fetch;
+  }
+})(typeof self !== 'undefined' ? self : this);
 
 
 /***/ }),
@@ -22262,8 +22721,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./card.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./card.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./heart.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./heart.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -22281,7 +22740,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "li.card {\n    max-width: 600px;\n    min-width: 600px;\n    height:auto;\n    margin: 0 auto;\n    background: #ffffff;\n    border: 1px solid #ededed;\n    margin-bottom: 20px;\n    position: relative;\n    overflow: hidden;\n}\n\nli.card .image-container {\n    border-top: 1px solid #ededed;\n    border-bottom: 1px solid #ededed;\n    background-color: #262626;\n    display:flex;\n    align-items: center;\n}\nli.card img {\n    width: 100%;\n    height: auto;\n}\n\nspan.loader {\n    position: absolute;\n    top: 5px;\n    left: 5px;\n}", ""]);
+exports.push([module.i, ".heart {\n    width: 100px;\n    height: 100px;\n    position: absolute;\n    left: 30px;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    background: url(https://cssanimation.rocks/images/posts/steps/heart.png)\n        no-repeat;\n    background-position: 0 0;\n    cursor: pointer;\n    animation: fave-heart 1s steps(28);\n}\n.heart--liked {\n    background-position: -2800px 0;\n    transition: background 1s steps(28);\n}\n@keyframes fave-heart {\n    0% {\n        background-position: 0 0;\n    }\n    100% {\n        background-position: -2800px 0;\n    }\n}\n", ""]);
 
 // exports
 
@@ -22307,8 +22766,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./photo-feed.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./photo-feed.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./card.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./card.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -22326,7 +22785,52 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "div.photo-feed {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    top: 110px;\n    left: 0;\n    background-color: #fafafa;\n    overflow-y: scroll;\n    padding: 0 15%;\n}\n\ndiv.photo-feed ul.cards {\n    display: flex;\n    list-style: none;\n    padding: 0px;\n    flex-direction: column;\n}", ""]);
+exports.push([module.i, ".card {\n    max-width: 600px;\n    min-width: 600px;\n    height: auto;\n    margin: 0 auto;\n    background: #ffffff;\n    border: 1px solid #ededed;\n    margin-bottom: 20px;\n    position: relative;\n    overflow: hidden;\n}\n\n.card .image-container {\n    border-top: 1px solid #ededed;\n    border-bottom: 1px solid #ededed;\n    background-color: #262626;\n    display: flex;\n    align-items: center;\n}\n.card img {\n    width: 100%;\n    height: auto;\n}\n\n.card__footer {\n    position: relative;\n    min-height: 50px;\n}\n\nspan.loader {\n    position: absolute;\n    top: 5px;\n    left: 5px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(57);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(6)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./photo-feed.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./photo-feed.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "div.photo-feed {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    top: 200px;\n    left: 0;\n    background-color: #fafafa;\n    overflow-y: scroll;\n    padding: 0 15%;\n}\n\ndiv.photo-feed ul.cards {\n    display: flex;\n    list-style: none;\n    padding: 0px;\n    flex-direction: column;\n}", ""]);
 
 // exports
 
