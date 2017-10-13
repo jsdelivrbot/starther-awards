@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardHeader from '../CardHeader';
-import CardFooter from '../CardFooter';
+import Heart from '../Heart';
+
 import './card.css';
 
 class Card extends Component {
@@ -16,7 +17,9 @@ class Card extends Component {
                 <span>
                     <i className="fa fa-bandcamp" />
                 </span>
-                <CardFooter />
+                <div className="card__footer">
+                    <Heart />
+                </div>
             </li>
         );
     }

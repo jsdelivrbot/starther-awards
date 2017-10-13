@@ -1,7 +1,7 @@
-li.card {
+.card {
     max-width: 600px;
     min-width: 600px;
-    height:auto;
+    height: auto;
     margin: 0 auto;
     background: #ffffff;
     border: 1px solid #ededed;
@@ -10,16 +10,21 @@ li.card {
     overflow: hidden;
 }
 
-li.card .image-container {
+.card .image-container {
     border-top: 1px solid #ededed;
     border-bottom: 1px solid #ededed;
     background-color: #262626;
-    display:flex;
+    display: flex;
     align-items: center;
 }
-li.card img {
+.card img {
     width: 100%;
     height: auto;
+}
+
+.card__footer {
+    position: relative;
+    min-height: 50px;
 }
 
 span.loader {
