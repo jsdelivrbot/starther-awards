@@ -18,7 +18,7 @@ class Card extends Component {
                     <i className="fa fa-bandcamp" />
                 </span>
                 <div className="card__footer">
-                    <Heart postId={id} />
+                    <Heart postID={id} />
                 </div>
             </li>
         );

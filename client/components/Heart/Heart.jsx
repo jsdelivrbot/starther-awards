@@ -10,15 +10,15 @@ class Heart extends Component {
         this.userID = getUserId();
         this.state = {
             status: false,
-            count: Math.round(Math.random() * 10)
+            count: 0
         };
         this.toggleLike = this.toggleLike.bind(this);
     }
 
     componentDidMount() {
-        const { postId } = this.props;
+        const { postID } = this.props;
         const userId = getUserId();
-        fetch(`/likes/${postId}?user_id=${userId}`)
+        fetch(`/likes/${postID}?user_id=${userId}`)
             .then(response => {
                 if (response.status >= 400) {
                     throw new Error('Bad response from server');
@@ -31,7 +31,7 @@ class Heart extends Component {
     }
 
     toggleLike() {
-        fetch('/likes', {
+        fetch('/likes/toggle', {
             method: 'POST',
             body: JSON.stringify({
                 userID: this.userID,

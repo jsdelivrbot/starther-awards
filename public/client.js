@@ -22036,7 +22036,7 @@ var Card = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'card__footer' },
-                    _react2.default.createElement(_Heart2.default, { postId: id })
+                    _react2.default.createElement(_Heart2.default, { postID: id })
                 )
             );
         }
@@ -22228,7 +22228,7 @@ var Heart = function (_Component) {
         _this.userID = (0, _index.getUserId)();
         _this.state = {
             status: false,
-            count: Math.round(Math.random() * 10)
+            count: 0
         };
         _this.toggleLike = _this.toggleLike.bind(_this);
         return _this;
@@ -22239,10 +22239,10 @@ var Heart = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            var postId = this.props.postId;
+            var postID = this.props.postID;
 
             var userId = (0, _index.getUserId)();
-            (0, _universalFetch2.default)('/likes/' + postId + '?user_id=' + userId).then(function (response) {
+            (0, _universalFetch2.default)('/likes/' + postID + '?user_id=' + userId).then(function (response) {
                 if (response.status >= 400) {
                     throw new Error('Bad response from server');
                 }
@@ -22256,7 +22256,7 @@ var Heart = function (_Component) {
         value: function toggleLike() {
             var _this3 = this;
 
-            (0, _universalFetch2.default)('/likes', {
+            (0, _universalFetch2.default)('/likes/toggle', {
                 method: 'POST',
                 body: JSON.stringify({
                     userID: this.userID,
