@@ -22226,7 +22226,8 @@ var Heart = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Heart.__proto__ || Object.getPrototypeOf(Heart)).call(this, props));
 
         _this.state = {
-            liked: false
+            liked: false,
+            count: Math.round(Math.random() * 10)
         };
         _this.toggleLike = _this.toggleLike.bind(_this);
         return _this;
@@ -22259,12 +22260,41 @@ var Heart = function (_Component) {
             });
         }
     }, {
+        key: 'getCountLabel',
+        value: function getCountLabel() {
+            var _state = this.state,
+                liked = _state.liked,
+                count = _state.count;
+
+            if (count === 0) {
+                return 'Nobody liked this 😢, give some love!';
+            }
+            if (liked) {
+                if (count === 1) {
+                    return 'You liked this';
+                } else {
+                    return 'You and ' + (count - 1) + ' ' + (count - 1 === 1 ? 'other' : 'others') + ' liked this';
+                }
+            } else {
+                return count + ' people like this';
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement('div', {
-                className: 'heart ' + (this.state.liked ? 'heart--liked' : null),
-                onClick: this.toggleLike
-            });
+            return _react2.default.createElement(
+                'div',
+                { className: 'heart-container' },
+                _react2.default.createElement('div', {
+                    className: 'heart ' + (this.state.liked ? 'heart--liked' : null),
+                    onClick: this.toggleLike
+                }),
+                _react2.default.createElement(
+                    'span',
+                    { className: 'heart__label' },
+                    this.getCountLabel()
+                )
+            );
         }
     }]);
 
@@ -22772,7 +22802,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, ".heart {\n    width: 100px;\n    height: 100px;\n    position: absolute;\n    left: 30px;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    background: url(https://cssanimation.rocks/images/posts/steps/heart.png)\n        no-repeat;\n    background-position: 0 0;\n    cursor: pointer;\n    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n    -webkit-tap-highlight-color: transparent;\n}\n.heart--liked {\n    background-position: -2800px 0;\n    transition: background 1s steps(28);\n}\n@keyframes fave-heart {\n    0% {\n        background-position: 0 0;\n    }\n    100% {\n        background-position: -2800px 0;\n    }\n}\n", ""]);
+exports.push([module.i, ".heart-container {\n    display: flex;\n    align-items: center;\n}\n.heart {\n    width: 100px;\n    height: 100px;\n    margin-left: -20px;\n    background: url(https://cssanimation.rocks/images/posts/steps/heart.png)\n        no-repeat;\n    background-position: 0 0;\n    cursor: pointer;\n    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n    -webkit-tap-highlight-color: transparent;\n}\n\n.heart__label {\n    font-size: 14px;\n    color: #444;\n    margin-left: -20px;\n}\n\n.heart--liked {\n    background-position: -2800px 0;\n    transition: background 1s steps(28);\n}\n@keyframes fave-heart {\n    0% {\n        background-position: 0 0;\n    }\n    100% {\n        background-position: -2800px 0;\n    }\n}\n", ""]);
 
 // exports
 
@@ -22817,7 +22847,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, ".card {\n    width: 100%;\n    height: auto;\n    margin: 0 auto;\n    background: #ffffff;\n    border: 1px solid #ededed;\n    margin-bottom: 20px;\n    position: relative;\n    overflow: hidden;\n}\n\n.card .image-container {\n    border-top: 1px solid #ededed;\n    border-bottom: 1px solid #ededed;\n    background-color: #262626;\n    display: flex;\n    align-items: center;\n}\n.card img {\n    width: 100%;\n    height: auto;\n}\n\n.card__footer {\n    position: relative;\n    min-height: 50px;\n}\n\nspan.loader {\n    position: absolute;\n    top: 5px;\n    left: 5px;\n}\n", ""]);
+exports.push([module.i, ".card {\n    width: 100%;\n    height: auto;\n    margin: 0 auto;\n    background: #ffffff;\n    border: 1px solid #ededed;\n    margin-bottom: 20px;\n    position: relative;\n}\n\n.card .image-container {\n    border-top: 1px solid #ededed;\n    border-bottom: 1px solid #ededed;\n    background-color: #262626;\n    display: flex;\n    align-items: center;\n}\n.card img {\n    width: 100%;\n    height: auto;\n}\n\n.card__footer {\n    position: relative;\n    display: flex;\n    align-items: center;\n    height: 50px;\n}\n\nspan.loader {\n    position: absolute;\n    top: 5px;\n    left: 5px;\n}\n", ""]);
 
 // exports
 
