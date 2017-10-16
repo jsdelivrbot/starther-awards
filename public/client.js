@@ -22249,7 +22249,7 @@ var Heart = function (_Component) {
                 _this2.setState(result);
                 setTimeout(function () {
                     _this2.fetchLikes(postID, userId);
-                }, 1000);
+                }, 3000);
             });
         }
     }, {
