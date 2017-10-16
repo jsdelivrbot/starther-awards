@@ -9,6 +9,7 @@ div.photo-feed {
     top: 20vh;
     left: 0;
     background-color: #fafafa;
+    overflow-x: hidden;
     overflow-y: scroll;
     transition: all 0.3s ease-in-out;
 }
