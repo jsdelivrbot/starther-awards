@@ -28,7 +28,7 @@ class Heart extends Component {
                 this.setState(result);
                 setTimeout(() => {
                     this.fetchLikes(postID, userId);
-                }, 1000);
+                }, 3000);
             });
     }
     componentDidMount() {
