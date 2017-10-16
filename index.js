@@ -45,7 +45,35 @@ app.get('/likes/:postID', (req, res) => {
         .catch(error => console.log(error));
 });
 
-app.post('/likes', (req, res) => {});
+app.post('/likes/toggle', (req, res) => {
+    if (!req.body) {
+        res.send({});
+    }
+    const { userID, postID } = req.body;
+
+    Like.findAll({ where: { userID, postID } })
+        .then(result => {
+            if (result.length > 0) {
+                // delete the existing like
+                return result[0].destroy();
+            } else {
+                // create a like
+                return Like.create({ userID, postID });
+            }
+        })
+        .then(() => Like.findAndCountAll({ where: { postID } }))
+        .then(result => {
+            const { count, rows } = result;
+            const userStatus = rows.filter(
+                row => row.dataValues.userID === Number(userID)
+            );
+            res.send({
+                count,
+                status: userStatus.length === 1
+            });
+        })
+        .catch(error => console.log(error));
+});
 
 app.delete('/likes', (req, res) => {});
 
