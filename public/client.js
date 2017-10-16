@@ -21752,7 +21752,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, ".navbar-container {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    height: 200px;\n    background-color: #ffffff;\n    padding: 0 15%;\n    display: flex;\n    z-index: 100;\n    align-items: center;\n    justify-content: space-between;\n    background-image: url(http://localhost:8080/logo.png);\n    background-size: cover;\n    box-shadow: 0 3px 10px rgba(57, 63, 72, 0.6);\n}", ""]);
+exports.push([module.i, ".navbar-container {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    height: 20vh;\n    background-color: #ffffff;\n    padding: 0 15%;\n    display: flex;\n    z-index: 100;\n    background-image: url(/logo.png);\n    background-size: cover;\n    background-position: center center;\n    box-shadow: 0 3px 10px rgba(57, 63, 72, 0.6);\n}\n", ""]);
 
 // exports
 
@@ -21906,15 +21906,17 @@ var PhotoFeed = function PhotoFeed() {
             { className: 'cards' },
             _react2.default.createElement(_Card2.default, {
                 imgSrc: 'https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1536.jpg',
-                title: 'Station F',
+                title: 'Station F collaboration space',
                 id: '0'
             }),
             _react2.default.createElement(_Card2.default, {
                 imgSrc: 'https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1528.jpg',
+                title: 'Station F collaboration space - another angle',
                 id: '1'
             }),
             _react2.default.createElement(_Card2.default, {
                 imgSrc: 'https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1497.jpg',
+                title: 'Station F containers',
                 id: '2'
             }),
             _react2.default.createElement(_Card2.default, {
@@ -21923,25 +21925,15 @@ var PhotoFeed = function PhotoFeed() {
                 id: '3'
             }),
             _react2.default.createElement(_Card2.default, {
-                imgSrc: 'http://farm1.static.flickr.com/9/12089146_078fce9dcf_o.jpg',
-                title: 'No comment',
+                imgSrc: 'http://4.bp.blogspot.com/--HXXE8AUjFI/T1O-ytTYsjI/AAAAAAAAD_8/vaP07ubF_-0/s640/cute-bunny-pictures-003.jpg',
+                title: 'Bunny bunny bunny',
                 id: '4'
             }),
             _react2.default.createElement(_Card2.default, {
-                imgSrc: 'https://unsplash.it/600/600?image=1060',
-                title: 'Coffee shop',
+                imgSrc: 'http://farm1.static.flickr.com/9/12089146_078fce9dcf_o.jpg',
+                title: 'No explanation',
                 id: '5'
-            }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1070' }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1071' }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1072' }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1073' }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1074' }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1080' }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1081' }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1082' }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1083' }),
-            _react2.default.createElement(_Card2.default, { imgSrc: 'https://unsplash.it/600/600?image=1084' })
+            })
         )
     );
 };
@@ -22740,7 +22732,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, ".heart {\n    width: 100px;\n    height: 100px;\n    position: absolute;\n    left: 30px;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    background: url(https://cssanimation.rocks/images/posts/steps/heart.png)\n        no-repeat;\n    background-position: 0 0;\n    cursor: pointer;\n    animation: fave-heart 1s steps(28);\n}\n.heart--liked {\n    background-position: -2800px 0;\n    transition: background 1s steps(28);\n}\n@keyframes fave-heart {\n    0% {\n        background-position: 0 0;\n    }\n    100% {\n        background-position: -2800px 0;\n    }\n}\n", ""]);
+exports.push([module.i, ".heart {\n    width: 100px;\n    height: 100px;\n    position: absolute;\n    left: 30px;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    background: url(https://cssanimation.rocks/images/posts/steps/heart.png)\n        no-repeat;\n    background-position: 0 0;\n    cursor: pointer;\n}\n.heart--liked {\n    background-position: -2800px 0;\n    transition: background 1s steps(28);\n}\n@keyframes fave-heart {\n    0% {\n        background-position: 0 0;\n    }\n    100% {\n        background-position: -2800px 0;\n    }\n}\n", ""]);
 
 // exports
 
@@ -22785,7 +22777,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, ".card {\n    max-width: 600px;\n    min-width: 600px;\n    height: auto;\n    margin: 0 auto;\n    background: #ffffff;\n    border: 1px solid #ededed;\n    margin-bottom: 20px;\n    position: relative;\n    overflow: hidden;\n}\n\n.card .image-container {\n    border-top: 1px solid #ededed;\n    border-bottom: 1px solid #ededed;\n    background-color: #262626;\n    display: flex;\n    align-items: center;\n}\n.card img {\n    width: 100%;\n    height: auto;\n}\n\n.card__footer {\n    position: relative;\n    min-height: 50px;\n}\n\nspan.loader {\n    position: absolute;\n    top: 5px;\n    left: 5px;\n}\n", ""]);
+exports.push([module.i, ".card {\n    width: 100%;\n    height: auto;\n    margin: 0 auto;\n    background: #ffffff;\n    border: 1px solid #ededed;\n    margin-bottom: 20px;\n    position: relative;\n    overflow: hidden;\n}\n\n.card .image-container {\n    border-top: 1px solid #ededed;\n    border-bottom: 1px solid #ededed;\n    background-color: #262626;\n    display: flex;\n    align-items: center;\n}\n.card img {\n    width: 100%;\n    height: auto;\n}\n\n.card__footer {\n    position: relative;\n    min-height: 50px;\n}\n\nspan.loader {\n    position: absolute;\n    top: 5px;\n    left: 5px;\n}\n", ""]);
 
 // exports
 
@@ -22830,7 +22822,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "div.photo-feed {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    top: 200px;\n    left: 0;\n    background-color: #fafafa;\n    overflow-y: scroll;\n    padding: 0 15%;\n}\n\ndiv.photo-feed ul.cards {\n    display: flex;\n    list-style: none;\n    padding: 0px;\n    flex-direction: column;\n}", ""]);
+exports.push([module.i, "div.photo-feed {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    top: 20vh;\n    left: 0;\n    background-color: #fafafa;\n    overflow-y: scroll;\n    padding: 0 15%;\n}\n\ndiv.photo-feed ul.cards {\n    display: flex;\n    list-style: none;\n    padding: 0px;\n    flex-direction: column;\n}\n", ""]);
 
 // exports
 
