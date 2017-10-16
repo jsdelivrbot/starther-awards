@@ -8,7 +8,7 @@ class Heart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            liked: false,
+            status: false,
             count: Math.round(Math.random() * 10)
         };
         this.toggleLike = this.toggleLike.bind(this);
@@ -25,7 +25,7 @@ class Heart extends Component {
                 return response.json();
             })
             .then(result => {
-                console.log(result);
+                this.setState(result);
             });
 
         console.log(getUserId());
@@ -42,17 +42,17 @@ class Heart extends Component {
             })
             .then(stories => {
                 this.setState({
-                    liked: !this.state.liked
+                    status: !this.state.status
                 });
             });
     }
 
     getCountLabel() {
-        const { liked, count } = this.state;
+        const { status, count } = this.state;
         if (count === 0) {
             return 'Nobody liked this 😢, give some love!';
         }
-        if (liked) {
+        if (status) {
             if (count === 1) {
                 return `You liked this`;
             } else {
@@ -69,7 +69,7 @@ class Heart extends Component {
         return (
             <div className="heart-container">
                 <div
-                    className={`heart ${this.state.liked
+                    className={`heart ${this.state.status
                         ? 'heart--liked'
                         : null}`}
                     onClick={this.toggleLike}

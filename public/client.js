@@ -22226,7 +22226,7 @@ var Heart = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Heart.__proto__ || Object.getPrototypeOf(Heart)).call(this, props));
 
         _this.state = {
-            liked: false,
+            status: false,
             count: Math.round(Math.random() * 10)
         };
         _this.toggleLike = _this.toggleLike.bind(_this);
@@ -22236,6 +22236,8 @@ var Heart = function (_Component) {
     _createClass(Heart, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            var _this2 = this;
+
             var postId = this.props.postId;
 
             var userId = (0, _index.getUserId)();
@@ -22245,7 +22247,7 @@ var Heart = function (_Component) {
                 }
                 return response.json();
             }).then(function (result) {
-                console.log(result);
+                _this2.setState(result);
             });
 
             console.log((0, _index.getUserId)());
@@ -22254,7 +22256,7 @@ var Heart = function (_Component) {
     }, {
         key: 'toggleLike',
         value: function toggleLike() {
-            var _this2 = this;
+            var _this3 = this;
 
             (0, _universalFetch2.default)('//offline-news-api.herokuapp.com/stories').then(function (response) {
                 if (response.status >= 400) {
@@ -22262,8 +22264,8 @@ var Heart = function (_Component) {
                 }
                 return response.json();
             }).then(function (stories) {
-                _this2.setState({
-                    liked: !_this2.state.liked
+                _this3.setState({
+                    status: !_this3.state.status
                 });
             });
         }
@@ -22271,13 +22273,13 @@ var Heart = function (_Component) {
         key: 'getCountLabel',
         value: function getCountLabel() {
             var _state = this.state,
-                liked = _state.liked,
+                status = _state.status,
                 count = _state.count;
 
             if (count === 0) {
                 return 'Nobody liked this 😢, give some love!';
             }
-            if (liked) {
+            if (status) {
                 if (count === 1) {
                     return 'You liked this';
                 } else {
@@ -22294,7 +22296,7 @@ var Heart = function (_Component) {
                 'div',
                 { className: 'heart-container' },
                 _react2.default.createElement('div', {
-                    className: 'heart ' + (this.state.liked ? 'heart--liked' : null),
+                    className: 'heart ' + (this.state.status ? 'heart--liked' : null),
                     onClick: this.toggleLike
                 }),
                 _react2.default.createElement(
