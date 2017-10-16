@@ -31,6 +31,11 @@ class Heart extends Component {
     }
 
     toggleLike() {
+        const { status, count } = this.state;
+        this.setState({
+            status: !status,
+            count: status ? count - 1 : count + 1
+        });
         fetch('/likes/toggle', {
             method: 'POST',
             headers: {
