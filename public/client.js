@@ -21893,7 +21893,7 @@ var _Card = __webpack_require__(42);
 
 var _Card2 = _interopRequireDefault(_Card);
 
-__webpack_require__(56);
+__webpack_require__(57);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21987,7 +21987,7 @@ var _Heart = __webpack_require__(48);
 
 var _Heart2 = _interopRequireDefault(_Heart);
 
-__webpack_require__(54);
+__webpack_require__(55);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22010,6 +22010,7 @@ var Card = function (_Component) {
         key: 'render',
         value: function render() {
             var _props = this.props,
+                id = _props.id,
                 imgSrc = _props.imgSrc,
                 title = _props.title;
 
@@ -22030,7 +22031,7 @@ var Card = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'card__footer' },
-                    _react2.default.createElement(_Heart2.default, null)
+                    _react2.default.createElement(_Heart2.default, { postId: id })
                 )
             );
         }
@@ -22199,7 +22200,9 @@ var _universalFetch = __webpack_require__(50);
 
 var _universalFetch2 = _interopRequireDefault(_universalFetch);
 
-__webpack_require__(52);
+var _index = __webpack_require__(52);
+
+__webpack_require__(53);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22225,11 +22228,20 @@ var Heart = function (_Component) {
     }
 
     _createClass(Heart, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var postId = this.props.postId;
+
+            var userId = (0, _index.getUserId)();
+            console.log((0, _index.getUserId)());
+            // getHeartState and update heart and like count
+        }
+    }, {
         key: 'toggleLike',
         value: function toggleLike() {
             var _this2 = this;
 
-            console.log(this.props.id);
+            console.log(this.props);
             (0, _universalFetch2.default)('//offline-news-api.herokuapp.com/stories').then(function (response) {
                 if (response.status >= 400) {
                     throw new Error('Bad response from server');
@@ -22696,10 +22708,33 @@ module.exports = self.fetch.bind(self);
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var getRandomBetween = function getRandomBetween(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+};
+
+var getUserId = exports.getUserId = function getUserId() {
+    var userId = localStorage.getItem('startherUserId');
+    if (!userId) {
+        userId = getRandomBetween(1, 15000000);
+        localStorage.setItem('startherUserId', userId);
+    }
+    return userId;
+};
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(53);
+var content = __webpack_require__(54);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -22724,7 +22759,7 @@ if(false) {
 }
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(undefined);
@@ -22738,13 +22773,13 @@ exports.push([module.i, ".heart {\n    width: 100px;\n    height: 100px;\n    po
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(55);
+var content = __webpack_require__(56);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -22769,7 +22804,7 @@ if(false) {
 }
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(undefined);
@@ -22783,13 +22818,13 @@ exports.push([module.i, ".card {\n    width: 100%;\n    height: auto;\n    margi
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(57);
+var content = __webpack_require__(58);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -22814,7 +22849,7 @@ if(false) {
 }
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(undefined);

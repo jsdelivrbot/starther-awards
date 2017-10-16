@@ -46,6 +46,9 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'public')
     },
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
     plugins: [
         new HTMLWebpackPlugin({
             template: 'views/pages/index.ejs'
