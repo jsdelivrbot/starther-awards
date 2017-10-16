@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
 
 const likeDefinition = {
-    count: Sequelize.INTEGER,
-    postIndex: Sequelize.INTEGER
+    like: Sequelize.BOOLEAN,
+    userID: Sequelize.INTEGER,
+    postID: Sequelize.INTEGER
 };
-module.export = likeDefinition;
+module.exports = likeDefinition;

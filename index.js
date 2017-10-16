@@ -7,7 +7,7 @@ const { likeDefinition } = require('./db-models');
 
 const sequelize = new Sequelize(process.env.DATABASE_URL);
 const Like = sequelize.define('like', likeDefinition);
-Like.sync();
+Like.sync({ force: true });
 
 app.set('port', process.env.PORT || 5000);
 
@@ -22,8 +22,12 @@ app.get('/', function(request, response) {
     response.render('pages/index');
 });
 
-app.get('/likes', (req, res) => {
-    Like.findAll().then(likes => res.send(likes));
+app.get('/likes/:postID', (req, res) => {
+    const { postID } = req.params;
+    Like.findAndCountAll({ where: { postID } }).then(result =>
+        console.log(result)
+    );
+    // Like.findAll().then(likes => res.send(likes));
 });
 
 app.post('/likes', (req, res) => {});

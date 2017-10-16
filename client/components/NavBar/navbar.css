@@ -10,7 +10,7 @@
     z-index: 100;
     align-items: center;
     justify-content: space-between;
-    background-image: url(http://localhost:8080/logo.png);
+    background-image: url(/logo.png);
     background-size: cover;
     box-shadow: 0 3px 10px rgba(57, 63, 72, 0.6);
 }
