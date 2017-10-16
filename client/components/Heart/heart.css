@@ -9,7 +9,6 @@
         no-repeat;
     background-position: 0 0;
     cursor: pointer;
-    animation: fave-heart 1s steps(28);
 }
 .heart--liked {
     background-position: -2800px 0;
