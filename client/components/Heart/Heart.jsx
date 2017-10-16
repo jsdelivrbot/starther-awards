@@ -7,6 +7,7 @@ import './heart.css';
 class Heart extends Component {
     constructor(props) {
         super(props);
+        this.userID = getUserId();
         this.state = {
             status: false,
             count: Math.round(Math.random() * 10)
@@ -27,23 +28,24 @@ class Heart extends Component {
             .then(result => {
                 this.setState(result);
             });
-
-        console.log(getUserId());
-        // getHeartState and update heart and like count
     }
 
     toggleLike() {
-        fetch('//offline-news-api.herokuapp.com/stories')
+        fetch('/likes', {
+            method: 'POST',
+            body: JSON.stringify({
+                userID: this.userID,
+                postID: this.props.postID
+            })
+        })
             .then(response => {
                 if (response.status >= 400) {
                     throw new Error('Bad response from server');
                 }
                 return response.json();
             })
-            .then(stories => {
-                this.setState({
-                    status: !this.state.status
-                });
+            .then(res => {
+                this.setState(res);
             });
     }
 

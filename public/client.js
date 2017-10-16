@@ -22225,6 +22225,7 @@ var Heart = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (Heart.__proto__ || Object.getPrototypeOf(Heart)).call(this, props));
 
+        _this.userID = (0, _index.getUserId)();
         _this.state = {
             status: false,
             count: Math.round(Math.random() * 10)
@@ -22249,24 +22250,25 @@ var Heart = function (_Component) {
             }).then(function (result) {
                 _this2.setState(result);
             });
-
-            console.log((0, _index.getUserId)());
-            // getHeartState and update heart and like count
         }
     }, {
         key: 'toggleLike',
         value: function toggleLike() {
             var _this3 = this;
 
-            (0, _universalFetch2.default)('//offline-news-api.herokuapp.com/stories').then(function (response) {
+            (0, _universalFetch2.default)('/likes', {
+                method: 'POST',
+                body: JSON.stringify({
+                    userID: this.userID,
+                    postID: this.props.postID
+                })
+            }).then(function (response) {
                 if (response.status >= 400) {
                     throw new Error('Bad response from server');
                 }
                 return response.json();
-            }).then(function (stories) {
-                _this3.setState({
-                    status: !_this3.state.status
-                });
+            }).then(function (res) {
+                _this3.setState(res);
             });
         }
     }, {
