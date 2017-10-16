@@ -22256,6 +22256,14 @@ var Heart = function (_Component) {
         value: function toggleLike() {
             var _this3 = this;
 
+            var _state = this.state,
+                status = _state.status,
+                count = _state.count;
+
+            this.setState({
+                status: !status,
+                count: status ? count - 1 : count + 1
+            });
             (0, _universalFetch2.default)('/likes/toggle', {
                 method: 'POST',
                 headers: {
@@ -22278,9 +22286,9 @@ var Heart = function (_Component) {
     }, {
         key: 'getCountLabel',
         value: function getCountLabel() {
-            var _state = this.state,
-                status = _state.status,
-                count = _state.count;
+            var _state2 = this.state,
+                status = _state2.status,
+                count = _state2.count;
 
             if (count === 0) {
                 return 'Nobody liked this 😢, give some love!';

@@ -49,7 +49,9 @@ app.post('/likes/toggle', (req, res) => {
     if (!req.body) {
         res.send({});
     }
-    const { userID, postID } = req.body;
+    let { userID, postID } = req.body;
+    userID = parseInt(userID);
+    postID = parseInt(postID);
 
     Like.findAll({ where: { userID, postID } })
         .then(result => {
