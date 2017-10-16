@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fetch from 'universal-fetch';
+import { getUserId } from '../../lib/utils/index.js';
 
 import './heart.css';
 
@@ -12,8 +13,15 @@ class Heart extends Component {
         this.toggleLike = this.toggleLike.bind(this);
     }
 
+    componentDidMount() {
+        const { postId } = this.props;
+        const userId = getUserId();
+        console.log(getUserId());
+        // getHeartState and update heart and like count
+    }
+
     toggleLike() {
-        console.log(this.props.id);
+        console.log(this.props);
         fetch('//offline-news-api.herokuapp.com/stories')
             .then(response => {
                 if (response.status >= 400) {

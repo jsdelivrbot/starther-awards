@@ -1,3 +1,12 @@
+body {
+    overflow-x: hidden;
+    position: fixed;
+    -webkit-overflow-scrolling: touch; /* lets it scroll lazy */
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+}
 div.photo-feed {
     position: absolute;
     right: 0;
@@ -5,8 +14,14 @@ div.photo-feed {
     top: 20vh;
     left: 0;
     background-color: #fafafa;
+    overflow-x: hidden;
     overflow-y: scroll;
-    padding: 0 15%;
+    transition: all 0.3s ease-in-out;
+}
+@media screen and (min-width: 1200px) {
+    div.photo-feed {
+        padding: 0 15%;
+    }
 }
 
 div.photo-feed ul.cards {

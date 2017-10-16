@@ -9,6 +9,8 @@
         no-repeat;
     background-position: 0 0;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 }
 .heart--liked {
     background-position: -2800px 0;
