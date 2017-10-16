@@ -6,7 +6,6 @@
     border: 1px solid #ededed;
     margin-bottom: 20px;
     position: relative;
-    overflow: hidden;
 }
 
 .card .image-container {
@@ -23,7 +22,9 @@
 
 .card__footer {
     position: relative;
-    min-height: 50px;
+    display: flex;
+    align-items: center;
+    height: 50px;
 }
 
 span.loader {

@@ -1,10 +1,11 @@
+.heart-container {
+    display: flex;
+    align-items: center;
+}
 .heart {
     width: 100px;
     height: 100px;
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: -20px;
     background: url(https://cssanimation.rocks/images/posts/steps/heart.png)
         no-repeat;
     background-position: 0 0;
@@ -12,6 +13,13 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
 }
+
+.heart__label {
+    font-size: 14px;
+    color: #444;
+    margin-left: -20px;
+}
+
 .heart--liked {
     background-position: -2800px 0;
     transition: background 1s steps(28);
