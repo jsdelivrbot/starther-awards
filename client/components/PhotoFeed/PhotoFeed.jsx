@@ -7,15 +7,17 @@ const PhotoFeed = () => (
         <ul className="cards">
             <Card
                 imgSrc="https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1536.jpg"
-                title="Station F"
+                title="Station F collaboration space"
                 id="0"
             />
             <Card
                 imgSrc="https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1528.jpg"
+                title="Station F collaboration space - another angle"
                 id="1"
             />
             <Card
                 imgSrc="https://stationf.co/wp-content/themes/station-f/assets/images/campus-pictures/1497.jpg"
+                title="Station F containers"
                 id="2"
             />
             <Card
@@ -23,28 +25,18 @@ const PhotoFeed = () => (
                 title="Kitty kitty kitty"
                 id="3"
             />
+
             <Card
-                imgSrc="http://farm1.static.flickr.com/9/12089146_078fce9dcf_o.jpg"
-                title="No comment"
+                imgSrc="http://4.bp.blogspot.com/--HXXE8AUjFI/T1O-ytTYsjI/AAAAAAAAD_8/vaP07ubF_-0/s640/cute-bunny-pictures-003.jpg"
+                title="Bunny bunny bunny"
                 id="4"
             />
+
             <Card
-                imgSrc="https://unsplash.it/600/600?image=1060"
-                title="Coffee shop"
+                imgSrc="http://farm1.static.flickr.com/9/12089146_078fce9dcf_o.jpg"
+                title="No explanation"
                 id="5"
             />
-
-            <Card imgSrc="https://unsplash.it/600/600?image=1070" />
-            <Card imgSrc="https://unsplash.it/600/600?image=1071" />
-            <Card imgSrc="https://unsplash.it/600/600?image=1072" />
-            <Card imgSrc="https://unsplash.it/600/600?image=1073" />
-            <Card imgSrc="https://unsplash.it/600/600?image=1074" />
-
-            <Card imgSrc="https://unsplash.it/600/600?image=1080" />
-            <Card imgSrc="https://unsplash.it/600/600?image=1081" />
-            <Card imgSrc="https://unsplash.it/600/600?image=1082" />
-            <Card imgSrc="https://unsplash.it/600/600?image=1083" />
-            <Card imgSrc="https://unsplash.it/600/600?image=1084" />
         </ul>
     </div>
 );

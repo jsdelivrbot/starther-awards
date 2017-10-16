@@ -2,7 +2,7 @@ div.photo-feed {
     position: absolute;
     right: 0;
     bottom: 0;
-    top: 200px;
+    top: 20vh;
     left: 0;
     background-color: #fafafa;
     overflow-y: scroll;
