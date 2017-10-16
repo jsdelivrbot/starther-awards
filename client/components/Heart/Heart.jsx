@@ -17,12 +17,22 @@ class Heart extends Component {
     componentDidMount() {
         const { postId } = this.props;
         const userId = getUserId();
+        fetch(`/likes/${postId}?user_id=${userId}`)
+            .then(response => {
+                if (response.status >= 400) {
+                    throw new Error('Bad response from server');
+                }
+                return response.json();
+            })
+            .then(result => {
+                console.log(result);
+            });
+
         console.log(getUserId());
         // getHeartState and update heart and like count
     }
 
     toggleLike() {
-        console.log(this.props);
         fetch('//offline-news-api.herokuapp.com/stories')
             .then(response => {
                 if (response.status >= 400) {

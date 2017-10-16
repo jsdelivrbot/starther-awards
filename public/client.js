@@ -22239,6 +22239,15 @@ var Heart = function (_Component) {
             var postId = this.props.postId;
 
             var userId = (0, _index.getUserId)();
+            (0, _universalFetch2.default)('/likes/' + postId + '?user_id=' + userId).then(function (response) {
+                if (response.status >= 400) {
+                    throw new Error('Bad response from server');
+                }
+                return response.json();
+            }).then(function (result) {
+                console.log(result);
+            });
+
             console.log((0, _index.getUserId)());
             // getHeartState and update heart and like count
         }
@@ -22247,7 +22256,6 @@ var Heart = function (_Component) {
         value: function toggleLike() {
             var _this2 = this;
 
-            console.log(this.props);
             (0, _universalFetch2.default)('//offline-news-api.herokuapp.com/stories').then(function (response) {
                 if (response.status >= 400) {
                     throw new Error('Bad response from server');
