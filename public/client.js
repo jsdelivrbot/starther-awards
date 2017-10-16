@@ -22732,7 +22732,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, ".heart {\n    width: 100px;\n    height: 100px;\n    position: absolute;\n    left: 30px;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    background: url(https://cssanimation.rocks/images/posts/steps/heart.png)\n        no-repeat;\n    background-position: 0 0;\n    cursor: pointer;\n}\n.heart--liked {\n    background-position: -2800px 0;\n    transition: background 1s steps(28);\n}\n@keyframes fave-heart {\n    0% {\n        background-position: 0 0;\n    }\n    100% {\n        background-position: -2800px 0;\n    }\n}\n", ""]);
+exports.push([module.i, ".heart {\n    width: 100px;\n    height: 100px;\n    position: absolute;\n    left: 30px;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    background: url(https://cssanimation.rocks/images/posts/steps/heart.png)\n        no-repeat;\n    background-position: 0 0;\n    cursor: pointer;\n    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n    -webkit-tap-highlight-color: transparent;\n}\n.heart--liked {\n    background-position: -2800px 0;\n    transition: background 1s steps(28);\n}\n@keyframes fave-heart {\n    0% {\n        background-position: 0 0;\n    }\n    100% {\n        background-position: -2800px 0;\n    }\n}\n", ""]);
 
 // exports
 
