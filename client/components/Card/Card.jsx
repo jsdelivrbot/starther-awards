@@ -6,7 +6,7 @@ import './card.css';
 
 class Card extends Component {
     render() {
-        const { imgSrc, title } = this.props;
+        const { id, imgSrc, title } = this.props;
         return (
             <li className="card">
                 <CardHeader title={title} />
@@ -18,7 +18,7 @@ class Card extends Component {
                     <i className="fa fa-bandcamp" />
                 </span>
                 <div className="card__footer">
-                    <Heart />
+                    <Heart postId={id} />
                 </div>
             </li>
         );
