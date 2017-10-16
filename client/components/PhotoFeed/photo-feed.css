@@ -1,3 +1,6 @@
+body {
+    -webkit-overflow-scrolling: touch; /* lets it scroll lazy */
+}
 div.photo-feed {
     position: absolute;
     right: 0;
