@@ -6,7 +6,11 @@ const Sequelize = require('sequelize');
 const { likeDefinition } = require('./db-models');
 
 const sequelize = new Sequelize(process.env.DATABASE_URL);
-const Like = sequelize.define('like', likeDefinition);
+const Like = sequelize.define('like', likeDefinition, {
+    underscoredAll: true,
+    underscored: true,
+    timestamps: false
+});
 Like.sync({ force: true });
 
 app.set('port', process.env.PORT || 5000);
@@ -24,10 +28,18 @@ app.get('/', function(request, response) {
 
 app.get('/likes/:postID', (req, res) => {
     const { postID } = req.params;
-    Like.findAndCountAll({ where: { postID } }).then(result =>
-        console.log(result)
-    );
-    // Like.findAll().then(likes => res.send(likes));
+    const userID = req.query.user_id;
+    Like.findAndCountAll({ where: { postID, like: true } }).then(result => {
+        const { count, rows } = result;
+        const userStatus = rows.filter(
+            row => row.dataValues.userID === Number(userID)
+        );
+        res.send({
+            count,
+            status:
+                userStatus && userStatus.length > 0 ? userStatus[0].like : false
+        });
+    });
 });
 
 app.post('/likes', (req, res) => {});
