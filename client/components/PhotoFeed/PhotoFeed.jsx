@@ -37,6 +37,12 @@ const PhotoFeed = () => (
                 title="No explanation"
                 id="5"
             />
+
+            <Card
+                imgSrc="http://zyzixun.net/data/out/130/3963861-piglet-wallpapers.jpg"
+                title="Little piglet"
+                id="6"
+            />
         </ul>
     </div>
 );
