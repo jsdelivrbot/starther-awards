@@ -1,6 +1,11 @@
 body {
     overflow-x: hidden;
+    position: fixed;
     -webkit-overflow-scrolling: touch; /* lets it scroll lazy */
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
 }
 div.photo-feed {
     position: absolute;

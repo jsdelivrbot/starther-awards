@@ -22857,7 +22857,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n    overflow-x: hidden;\n    -webkit-overflow-scrolling: touch; /* lets it scroll lazy */\n}\ndiv.photo-feed {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    top: 20vh;\n    left: 0;\n    background-color: #fafafa;\n    overflow-y: scroll;\n    transition: all 0.3s ease-in-out;\n}\n@media screen and (min-width: 1200px) {\n    div.photo-feed {\n        padding: 0 15%;\n    }\n}\n\ndiv.photo-feed ul.cards {\n    display: flex;\n    list-style: none;\n    padding: 0px;\n    flex-direction: column;\n}\n", ""]);
+exports.push([module.i, "body {\n    overflow-x: hidden;\n    -webkit-overflow-scrolling: touch; /* lets it scroll lazy */\n}\ndiv.photo-feed {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    top: 20vh;\n    left: 0;\n    background-color: #fafafa;\n    overflow-x: hidden;\n    overflow-y: scroll;\n    transition: all 0.3s ease-in-out;\n}\n@media screen and (min-width: 1200px) {\n    div.photo-feed {\n        padding: 0 15%;\n    }\n}\n\ndiv.photo-feed ul.cards {\n    display: flex;\n    list-style: none;\n    padding: 0px;\n    flex-direction: column;\n}\n", ""]);
 
 // exports
 
