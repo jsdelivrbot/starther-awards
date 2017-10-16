@@ -33,6 +33,10 @@ class Heart extends Component {
     toggleLike() {
         fetch('/likes/toggle', {
             method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({
                 userID: this.userID,
                 postID: this.props.postID
