@@ -1,6 +1,5 @@
 body {
-    overflow: hidden;
-    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch; /* lets it scroll lazy */
 }
 div.photo-feed {
