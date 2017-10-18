@@ -22231,25 +22231,34 @@ var Heart = function (_Component) {
             count: 0
         };
         _this.toggleLike = _this.toggleLike.bind(_this);
+        _this.fetchLikes = _this.fetchLikes.bind(_this);
         return _this;
     }
 
     _createClass(Heart, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
+        key: 'fetchLikes',
+        value: function fetchLikes(postID, userId) {
             var _this2 = this;
 
-            var postID = this.props.postID;
-
-            var userId = (0, _index.getUserId)();
-            (0, _universalFetch2.default)('/likes/' + postID + '?user_id=' + userId).then(function (response) {
+            return (0, _universalFetch2.default)('/likes/' + postID + '?user_id=' + userId).then(function (response) {
                 if (response.status >= 400) {
                     throw new Error('Bad response from server');
                 }
                 return response.json();
             }).then(function (result) {
                 _this2.setState(result);
+                setTimeout(function () {
+                    _this2.fetchLikes(postID, userId);
+                }, 3000);
             });
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var postID = this.props.postID;
+
+            var userId = (0, _index.getUserId)();
+            this.fetchLikes(postID, userId);
         }
     }, {
         key: 'toggleLike',
