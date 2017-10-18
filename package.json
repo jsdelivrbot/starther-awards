@@ -7,7 +7,9 @@
         "start:front": "webpack-dev-server",
         "start:server": "node index.js",
         "test": "node test.js",
-        "build": "webpack"
+        "build": "webpack",
+        "deploy":
+            "yarn build; git add . ;git commit -m'update'; git push origin master; git push heroku master"
     },
     "dependencies": {
         "babel-loader": "7.1.2",
@@ -39,10 +41,6 @@
         "type": "git",
         "url": "https://github.com/DataDog/starther-awards.git"
     },
-    "keywords": [
-        "node",
-        "heroku",
-        "express"
-    ],
+    "keywords": ["node", "heroku", "express"],
     "license": "MIT"
 }
