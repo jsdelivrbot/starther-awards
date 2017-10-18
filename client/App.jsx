@@ -4,8 +4,8 @@ import PhotoFeed from './components/PhotoFeed';
 
 const App = () => (
     <div>
-        {<Header />}
-        {<PhotoFeed />}
+        <Header />
+        <PhotoFeed />
     </div>
 );
 
