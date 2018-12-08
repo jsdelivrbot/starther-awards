@@ -2,7 +2,7 @@
   "name": "Starther awards workshop",
   "description": "Demo for the starther awards workshop",
   "repository": "https://github.com/DataDog/starther-awards.git",
-  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "logo": "https://cdn.jsdelivr.net/gh/heroku/node-js-getting-started/public/node.svg",
   "keywords": [
     "node",
     "express",
